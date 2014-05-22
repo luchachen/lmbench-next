@@ -178,8 +178,7 @@ if [ X$BENCHMARK_OS = XYES -o X$BENCHMARK_SIG = XYES ]; then
 	lat_sig -P $SYNC_MAX install
 	echo \[`date`] 1>&2
 	lat_sig -P $SYNC_MAX catch
-	echo \[`date`] 1>&2
-	lat_sig -P $SYNC_MAX prot lat_sig
+	lat_sig -P $SYNC_MAX prot
 fi
 if [ X$BENCHMARK_OS = XYES -o X$BENCHMARK_PIPE = XYES ]; then
 	echo \[`date`] 1>&2
