@@ -16,7 +16,7 @@
 
 #define STRIDE  (512/sizeof(char *))
 #define	LOWER	512
-void	loads(size_t range, size_t stride, 
+void	loads(size_t len, size_t range, size_t stride, 
 	      int parallel, int warmup, int repetitions);
 size_t	step(size_t k);
 void	initialize(iter_t iterations, void* cookie);
@@ -112,7 +112,7 @@ benchmark_loads(iter_t iterations, void *cookie)
 
 
 void
-loads(size_t range, size_t stride, 
+loads(size_t len, size_t range, size_t stride, 
 	int parallel, int warmup, int repetitions)
 {
 	double result;
@@ -122,7 +122,7 @@ loads(size_t range, size_t stride,
 	if (range < stride) return;
 
 	state.width = 1;
-	state.len = range;
+	state.len = len;
 	state.maxlen = range;
 	state.line = stride;
 	state.pagesize = getpagesize();
